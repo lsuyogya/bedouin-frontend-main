@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Conversations with a Bedouin</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <!-- <h1>Conversations with a Bedouin</h1> -->
+        <img
+          src="./assets/h1.png"
+          alt="Conversations with a Bedouin" />
+        <!-- <h2>Sawt Al Bedouin - Voice of the Bedouin</h2> -->
+        <img
+          src="./assets/h2.png"
+          alt="Voice of the Bedouin" />
+      </header>
+
+      <div
+        id="initialTxt"
+        class="initialTxt">
+        <p>
+          Three generations and 100 years of stories, in conversation <br />
+          powered by AI.
+        </p>
+        <button id="beginBtn">Let's Begin</button>
+      </div>
+      <div class="chat-container">
+        <div
+          class="chat-messages"
+          id="chatMessages">
+          <!-- <div class="message bot">
+            <p>
+              Peace be upon you, traveler. I am Sawt Al Bedouin, a voice from
+              the desert. Ask me anything about the Bedouin way of life, our
+              traditions, or our stories. I speak from the heart of Dhaid, where
+              the wind carries memories older than the tallest buildings in
+              Dubai.
+            </p>
+          </div> -->
+        </div>
+        <div class="input-container">
+          <div class="txtCircle"></div>
+          <textarea
+            id="userInput"
+            rows="1"
+            placeholder="Ask me anything about Bedouin life..."></textarea>
+          <button id="sendButton">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <line
+                x1="22"
+                y1="2"
+                x2="11"
+                y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="settings-panel">
+        <div class="llm-selector">
+          <label for="llmProvider">AI Model:</label>
+          <select id="llmProvider">
+            <option value="openai">OpenAI (GPT-4)</option>
+            <option value="anthropic">Anthropic (Claude)</option>
+            <option value="google">Google (Gemini)</option>
+          </select>
+        </div>
+        <div class="theme-selector">
+          <button
+            class="theme-button active"
+            data-theme="all">
+            All Topics
+          </button>
+          <button
+            class="theme-button"
+            data-theme="camels">
+            Camels & Racing
+          </button>
+          <button
+            class="theme-button"
+            data-theme="traditions">
+            Traditions
+          </button>
+          <button
+            class="theme-button"
+            data-theme="modern">
+            Modern Life
+          </button>
+          <button
+            class="theme-button"
+            data-theme="wisdom">
+            Desert Wisdom
+          </button>
+        </div>
+      </div>
+
+      <footer>
+        <p>Based on the film "Bedouins of the Wind" by Danish Farhan</p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
