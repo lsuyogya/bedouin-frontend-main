@@ -35,7 +35,6 @@
   box-sizing: border-box;
   scrollbar-width: thin;
   scrollbar-color: var(--accent-color) transparent;
-  scrollbar-gutter: stable;
 }
 
 body {
@@ -133,6 +132,7 @@ header h2 {
   /* gap: 1.5rem; */
   max-height: 100%;
   overflow-y: auto;
+  scrollbar-gutter: stable;
 }
 
 .message {
