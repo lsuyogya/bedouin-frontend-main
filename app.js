@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
     let typingSpeed = 10; // milliseconds per character
-    if (sender === "user") typingSpeed = 0.5; // No typing animation for user messages
+    if (sender === "user") typingSpeed = 0.5; // Short typing animation for user messages
 
     const messageTimeouts = [];
     // Add this message's animations to the active list
@@ -102,6 +102,11 @@ document.addEventListener("DOMContentLoaded", function () {
       currentParagraphIndex: 0,
     };
     activeTypingAnimations.push(animationInfo);
+
+    function ScrollToBottom() {
+      const scrollContainer = document.getElementById("chatMessages");
+      scrollContainer.scrollTop = scrollContainer.scrollHeight;
+    }
 
     function typeText(elements, paragraphIndex, text, index, callback) {
       const { textSpan, cursorSpan } = elements;
@@ -120,6 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
           if (timeoutIndex > -1) messageTimeouts.splice(timeoutIndex, 1);
 
           typeText(elements, paragraphIndex, text, index + 1, callback);
+          ScrollToBottom();
         }, typingSpeed);
 
         // Store timeout ID
